@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, Suspense } from 'react'
+import { useState } from 'react'
 import Image from 'next/image';
 import styles from './styles.module.css';
 import { useRouter } from 'next/navigation';

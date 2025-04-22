@@ -1,5 +1,7 @@
 import { NextRequest } from "next/server"
 
+export const runtime = 'edge'
+
 export async function GET(request: NextRequest, others: { params: Promise<unknown> }) {
   console.log('[get] request', request.nextUrl, others)
   const parameters = await others.params
@@ -11,7 +13,7 @@ export async function POST(request: NextRequest, others: { params: Promise<unkno
   console.log('[post] request', request.url)
   const reader = request.body?.getReader()
   if (reader) {
-    const chunks: Uint8Array<ArrayBufferLike>[] = []
+    const chunks: Uint8Array[] = []
     let str = ''
     let isDone = false
     const decoder = new TextDecoder()
