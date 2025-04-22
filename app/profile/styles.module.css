@@ -1,0 +1,7 @@
+.blogs {
+    padding: 10px;
+    background-image: url("/img/test1.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
