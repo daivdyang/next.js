@@ -1,7 +1,10 @@
 'use client'
 
+import { useRouter } from 'next/navigation'
 import { useState, useEffect } from 'react'
 export function SubClientComp1() {
+  const router = useRouter()
+
   console.log('render SubClientComp1')
   const [data, setData] = useState({ count: 0 })
 
@@ -16,10 +19,17 @@ export function SubClientComp1() {
     })
   }
 
+  function onClickBackHome() {
+    console.log('pushState to home page')
+    // window.history.pushState(null, '', '/')
+    router.push('/')
+  }
+
   return (
-    <div>
-      <h5>This is Client Comp1 Child</h5>
+    <div className='flex flex-col'>
+      <h5>[Client Component Child]</h5>
       <div onClick={onClick}>{ `Count:${data.count}` }</div>
+      <button className="rounded-xl p-2 bg-[#0000001d]" onClick={onClickBackHome}>Back Home</button>
     </div>
   )
 }

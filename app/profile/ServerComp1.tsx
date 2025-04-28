@@ -1,3 +1,6 @@
+// import { redirect } from 'next/navigation'
+
+import { genData } from "../lib/data";
 
 function delay<T>(data: T, ms = 5000) {
   return new Promise<T>(res => {
@@ -11,12 +14,14 @@ function delay<T>(data: T, ms = 5000) {
 
 export async function ServerComp1() {
   console.log('exec ServerComp1')
-  const data = await delay<{ name: string, age: number }>({ name: 'hello', age: 20 })
+  await delay<unknown>(null)
+  const data = await genData('cacheKey1')
+  // redirect('/')
   return (
     <div>
-      <h1>This is Server Component</h1>
+      <h1>[Server Component]</h1>
       <div>name: { data.name }</div>
-      <div>age: { data.age }</div>
+      <div>id: { data.id }</div>
     </div>
   )
 }

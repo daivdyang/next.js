@@ -5,9 +5,8 @@ import styles from './styles.module.css';
 import { useTest } from '@/hooks/useTest';
 import type React from 'react'
 import { SubClientComp1 } from './ClientComp1Child';
-import { ServerComp2 } from './ServerComp2'
 
-export function ClientComp1(props: React.PropsWithChildren<{ key?: string }>) {
+export function ClientComp1(props: React.PropsWithChildren<{ key?: string, child2?: React.ReactNode }>) {
   console.log('exec ClientComp1');
 
     const router = useRouter();
@@ -25,12 +24,12 @@ export function ClientComp1(props: React.PropsWithChildren<{ key?: string }>) {
     return (
         <>
             <div className={`flex flex-col justify-center ${styles.blogs}`}>
-                <h5>This is Profile page</h5>
+                <h5>[Client Component]</h5>
                 <div>{ `name:${state?.name}` }</div>
                 <div>{ `age:${state?.age}` }</div>
-                <button className="rounded-xl p-2 bg-[#0000001d]" onClick={onClickGoto}>go to blogs</button>
+                <button className="rounded-xl p-2 bg-[#0000001d]" onClick={onClickGoto}>Back Blogs</button>
                 <SubClientComp1 />
-                <ServerComp2 key="test123" />
+                { props.child2 }
             </div>
             { props.children }
         </>

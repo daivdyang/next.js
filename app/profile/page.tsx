@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import { ClientComp1 } from "./ClientComp1";
 import { ServerComp1 } from './ServerComp1'
+import { ServerComp2 } from './ServerComp2'
 
 const Loading = () => '<div>Loading Server Comp1</div>'
 
@@ -9,14 +10,12 @@ export default function Profile() {
 
     return (
         <>
-            <div>
-                [Profile]This is Server Component
-            </div>
+            <h5>[Profile]</h5>
             <Suspense fallback={<Loading />}>
                 <ServerComp1 />
             </Suspense>
-            <ClientComp1 key={"ProfileKey"}>
-                <div>Test123</div>
+            <ClientComp1 key={"ProfileKey"} child2={<ServerComp2 />}>
+                <div>Client component slot content</div>
             </ClientComp1>
         </>
     )
