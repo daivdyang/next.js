@@ -23,11 +23,11 @@ export function ClientComp1(props: React.PropsWithChildren<{ key?: string, child
     }, [state])
     return (
         <>
-            <div className={`flex flex-col justify-center ${styles.blogs}`}>
+            <div className={`m-2 flex flex-col justify-center ${styles.blogs} border-4`}>
                 <h5>[Client Component]</h5>
                 <div>{ `name:${state?.name}` }</div>
                 <div>{ `age:${state?.age}` }</div>
-                <button className="rounded-xl p-2 bg-[#0000001d]" onClick={onClickGoto}>Back Blogs</button>
+                <button className="rounded-xl p-2 bg-[#0000001d]" onClick={onClickGoto}>Blog</button>
                 <SubClientComp1 />
                 { props.child2 }
             </div>

@@ -8,7 +8,7 @@ export function Hello() {
     setText('AAA')
   }, [])
 
-  return <div onClick={() => setText('Qoo')}>Hello { text }</div>
+  return <div className='m-2 p-2' onClick={() => setText('Qoo')}>Hello { text }</div>
 }
 
 export function Hello2() {

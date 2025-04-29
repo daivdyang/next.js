@@ -22,10 +22,10 @@ export function ClientComp1(props: React.PropsWithChildren<{ key?: string }>) {
     }, [state])
     return (
         <>
-            <div className={`flex justify-center ${styles.blogs}`}>
-                <h5>This is dashboard page</h5>
+            <div className={`m-2 p-2 flex flex-col justify-center items-center ${styles.blogs}`}>
+                <h5>[Dashboard]</h5>
                 <div>{ JSON.stringify(state) }</div>
-                <button onClick={onClickGoto}>Back Blogs</button>
+                <button className="rounded-xl p-2 bg-[#0000001d]" onClick={onClickGoto}>Blog</button>
             </div>
             { props.children }
         </>

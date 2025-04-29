@@ -18,7 +18,7 @@ export async function ServerComp1() {
   const data = await genData('cacheKey1')
   // redirect('/')
   return (
-    <div>
+    <div className="box p-2 m-2">
       <h1>[Server Component]</h1>
       <div>name: { data.name }</div>
       <div>id: { data.id }</div>

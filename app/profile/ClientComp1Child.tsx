@@ -26,10 +26,10 @@ export function SubClientComp1() {
   }
 
   return (
-    <div className='flex flex-col'>
+    <div className='m-2 flex flex-col border-4'>
       <h5>[Client Component Child]</h5>
       <div onClick={onClick}>{ `Count:${data.count}` }</div>
-      <button className="rounded-xl p-2 bg-[#0000001d]" onClick={onClickBackHome}>Back Home</button>
+      <button className="rounded-xl p-2 bg-[#0000001d]" onClick={onClickBackHome}>Home</button>
     </div>
   )
 }

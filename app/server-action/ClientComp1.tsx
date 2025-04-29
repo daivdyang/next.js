@@ -1,6 +1,7 @@
 "use client"
 
 import { useActionState, useEffect } from 'react'
+import { useRouter } from 'next/navigation';
 import { createPost } from './actions'
 
 const initialState = {
@@ -10,7 +11,12 @@ const initialState = {
 export function Form() {
   console.log('useActionState', useActionState)
   const [state, formAction, pending] = useActionState(createPost, initialState)
- 
+  const router = useRouter()
+
+  function onClickBackHome() {
+    router.push('/')
+  }
+
   useEffect(() => {
     console.log('useEffect Form', state)
   }, [state])
@@ -27,7 +33,8 @@ export function Form() {
       </div>
       {state?.message && <p>{state.message}</p>}
       <div>{ `loading status: ${pending.toString()}`}</div>
-      <button className="px-4 py-2 rounded-xl bg-[#0000000d]" disabled={pending}>Create Post</button>
+      <button className="m-2 px-4 py-2 rounded-xl bg-[#0000000d]" disabled={pending}>Create Post</button>
+      <button className="m-2 rounded-xl p-2 bg-[#0000001d]" onClick={onClickBackHome}>Home</button>
     </form>
   )
 }

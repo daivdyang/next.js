@@ -1,7 +1,7 @@
 import { Suspense } from "react"
 
-function TeamLoading () {
-  return (<div>Loading Team Comp</div>)
+function Loading (props: { name: string }) {
+  return (<div>Loading {props.name} Comp ...</div>)
 }
 
 
@@ -12,12 +12,14 @@ export default function ParallelLayout(
   analytics: Readonly<React.ReactNode>
 }) {
   return (
-    <div className="Parallel-Layout">
+    <div className="Parallel-Layout m-2 p-2 border-4">
       {children}
-      <Suspense fallback={<TeamLoading />}>
+      <Suspense fallback={<Loading name="Team" />}>
         {team}
       </Suspense>
-      {analytics}
+      <Suspense fallback={<Loading name="Analytics" />}>
+        {analytics}
+      </Suspense>
     </div>
   )
 }

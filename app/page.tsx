@@ -10,10 +10,10 @@ export default async function Home() {
             <Link href={'/dashboard'}>Dashboard</Link>
           </li>
           <li className="mb-2">
-            <Link href={'/blogs'}>Blogs</Link>
+            <Link href={'/blogs'}>Blog</Link>
           </li>
           <li className="mb-2">
-            <Link href={'/blogs/xxx'}>Blogs/xxx</Link>
+            <Link href={'/blogs/xxx'}>Blog/xxx</Link>
           </li>
           <li className="mb-2">
             <Link href={'/parallel-routes'}>Parallel Routes</Link>

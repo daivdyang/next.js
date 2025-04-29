@@ -3,7 +3,7 @@ import { ClientComp1 } from "./ClientComp1";
 import { ServerComp1 } from './ServerComp1'
 import { ServerComp2 } from './ServerComp2'
 
-const Loading = () => '<div>Loading Server Comp1</div>'
+const Loading = () => <div className="box m-2 p-2">Loading Server Comp1 ...</div>
 
 export default function Profile() {
     console.log('exec Profile');
@@ -15,7 +15,7 @@ export default function Profile() {
                 <ServerComp1 />
             </Suspense>
             <ClientComp1 key={"ProfileKey"} child2={<ServerComp2 />}>
-                <div>Client component slot content</div>
+                <div className="m-2 border-4 p-2">Client component slot content</div>
             </ClientComp1>
         </>
     )
