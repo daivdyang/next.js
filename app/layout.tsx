@@ -14,7 +14,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Hello world!!!",
+  title: "Test Next.js!!!",
   description: "test my first nextjs",
 };
 

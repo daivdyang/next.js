@@ -8,7 +8,7 @@ const corsOptions = {
   'Access-Control-Allow-Headers': 'Content-Type, Authorization',
 }
 
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   console.log('[middleware] url:', request.url);
 
   const origin = request.headers.get('origin') ?? ''
@@ -34,10 +34,14 @@ export function middleware(request: NextRequest) {
   Object.entries(corsOptions).forEach(([key, value]) => {
     response.headers.set(key, value)
   })
- 
-  return NextResponse.json({ name: 'Tester' }, { headers: { 'Access-Control-Allow-Origin': origin, 'x-data-test': 'abc' }})
+  
+  if (request.url.includes('/api/')) {
+    return NextResponse.json({ name: 'Tester' }, { headers: { 'Access-Control-Allow-Origin': origin, 'x-data-test': 'abc' }})
+  }
+
+  // can read cookie, but set cookie is invalid here
 }
 
 export const config = {
-  matcher: ['/api/:path*']
+  matcher: ['/api/:path*', '/cookie-test']
 }
