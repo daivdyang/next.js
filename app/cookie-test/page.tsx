@@ -19,3 +19,5 @@ export default async function CookieTest() {
     </div>
   )
 }
+
+export const runtime = 'edge';

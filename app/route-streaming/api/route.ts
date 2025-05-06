@@ -47,3 +47,5 @@ export function POST(request: Request) {
 
   return new Response(stream)
 }
+
+export const runtime = 'edge';

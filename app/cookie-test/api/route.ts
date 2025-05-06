@@ -19,3 +19,5 @@ export async function GET(request: Request) {
   // redirect back origin url and set cookie to client
   redirect('/cookie-test')
 }
+
+export const runtime = 'edge';
