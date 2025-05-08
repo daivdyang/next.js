@@ -6,3 +6,5 @@ export async function GET(request: Request) {
   const  data = await cache2()
   return new Response(JSON.stringify(data), { headers: { 'Content-Type': 'application/json' } })
 }
+
+export const runtime = 'edge';
