@@ -22,6 +22,12 @@ export default async function Home() {
             <Link href={'/isr'}>Incremental Static Regeneration</Link>
           </li>
           <li className="mb-2">
+            <Link href={'/isr/1'}>ISR [Build Time id(1|2|3)]</Link>
+          </li>
+          <li className="mb-2">
+            <Link href={'/isr/777'}>ISR [Runtime Time id not (1|2|3)]</Link>
+          </li>
+          <li className="mb-2">
             <Link href={'/cookie-test'}>Cookie Test</Link>
           </li>
           <li className="mb-2">
