@@ -16,5 +16,3 @@ export const cache2 = cache(() => {
 
   return Promise.resolve(mockList)
 })
-
-console.log('type', typeof cache1)
