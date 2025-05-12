@@ -1,3 +1,4 @@
+import styles from './styles.module.css';
 
 function delay<T>(data: T, ms = 2000) {
   return new Promise<T>(res => {
@@ -13,7 +14,7 @@ export async function ServerComp1() {
   console.log('exec ServerComp1')
   const data = await delay<{ name: string, age: number }>({ name: 'tester', age: 18 })
   return (
-    <div className="m-2 p-2 border-4">
+    <div className={`m-2 p-2 border-4  ${styles.blogs}`}>
       <h1>[Server] Component</h1>
       <div>name: { data.name }</div>
       <div>age: { data.age }</div>

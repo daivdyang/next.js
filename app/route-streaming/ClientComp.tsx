@@ -39,7 +39,7 @@ export default function ClientComp(props: { method: 'Get' | 'Post' }) {
   }
 
   return (
-    <>
+    <div className="border-4 m-4 p-2">
       <button
         className={`m-2 px-4 py-2 rounded-xl bg-[#0000000d] ${loading ? 'bg-[yellow]' : ''}`}
         onClick={onClick}
@@ -48,6 +48,6 @@ export default function ClientComp(props: { method: 'Get' | 'Post' }) {
           Start Fetch Stream
       </button>
       {list.map((data, idx) => <p key={idx}>{data}</p>)}
-    </>
+    </div>
   )
 }

@@ -7,19 +7,13 @@ export default async function Home() {
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <ol className="list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
           <li className="mb-2">
-            <Link href={'/dashboard'}>Dashboard</Link>
+            <Link href={'/basic'}>Basic</Link>
           </li>
           <li className="mb-2">
-            <Link href={'/blogs'}>Blog</Link>
-          </li>
-          <li className="mb-2">
-            <Link href={'/blogs/xxx'}>Blog/xxx</Link>
+            <Link href={'/lazy-load'}>Lazy Load Client Component</Link>
           </li>
           <li className="mb-2">
             <Link href={'/parallel-routes'}>Parallel Routes</Link>
-          </li>
-          <li className="mb-2">
-            <Link href={'/isr'}>Incremental Static Regeneration</Link>
           </li>
           <li className="mb-2">
             <Link href={'/isr/1'}>ISR [Build Time id(1|2|3)]</Link>
@@ -33,7 +27,7 @@ export default async function Home() {
           <li className="mb-2">
             <Link href={'/route-streaming'}>Route Streaming</Link>
           </li>
-          <li className="mb-2">
+          {/* <li className="mb-2">
             <Link href={'/products/A'}>Test StaticParams Page</Link>
           </li>
           <li className="mb-2">
@@ -44,12 +38,12 @@ export default async function Home() {
           </li>
           <li className="mb-2">
             <Link href={'/products/E/P4'}>Test DynamicParams Page2</Link>
-          </li>
+          </li> */}
           <li className="mb-2 mt-[2000px]">
-            <Link href={'/profile'} prefetch={false}>Profile</Link>
+            <Link href={'/server-suspense'} prefetch={false}>Server Component + Suspense</Link>
           </li>
           <li className="mb-2">
-            <Link href={'/server-action'} prefetch={true}>Server Action</Link>
+            <Link href={'/server-action'} prefetch={true}>Server Action(if in viewport will fetch js + rsc)</Link>
           </li>
         </ol>
       </main>

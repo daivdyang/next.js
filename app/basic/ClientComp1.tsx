@@ -1,7 +1,6 @@
 'use client'
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import styles from './styles.module.css';
 import { useTest } from '@/hooks/useTest';
 import type React from 'react'
 
@@ -9,9 +8,9 @@ export function ClientComp1(props: React.PropsWithChildren<{ key?: string }>) {
   console.log('exec ClientComp1');
 
     const router = useRouter();
-    const { state } = useTest()
+    const { state, addCount } = useTest()
     const onClickGoto = () => {
-        router.push(`/blogs?name=${encodeURIComponent('abc過字edf')}`)
+        router.push(`/`)
     }
 
     useEffect(() => {
@@ -21,13 +20,15 @@ export function ClientComp1(props: React.PropsWithChildren<{ key?: string }>) {
         }
     }, [state])
     return (
-        <>
-            <div className={`m-2 p-2 flex flex-col justify-center items-center ${styles.blogs}`}>
-                <h5>[Dashboard]</h5>
-                <div>{ JSON.stringify(state) }</div>
-                <button className="rounded-xl p-2 bg-[#0000001d]" onClick={onClickGoto}>Blog</button>
+        <div className="flex">
+            <div className={`m-2 p-2 flex flex-col gap-4 justify-center items-center border-4`}>
+                <h5>[Client Component]</h5>
+                <div>{ `Name:${state?.name}` }</div>
+                <div>{ `Count:${state?.count}` }</div>
+                <button className="rounded-xl p-2 bg-[#0000001d]" onClick={addCount}>Count+1</button>
+                <button className="rounded-xl p-2 bg-[#0000001d]" onClick={onClickGoto}>Home</button>
             </div>
             { props.children }
-        </>
+        </div>
     )
 }

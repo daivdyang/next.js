@@ -12,9 +12,9 @@ function delay<T>(data: T, ms = 5000) {
   })
 }
 
-export async function ServerComp1() {
+export async function ServerComp1(props: { ms: number }) {
   console.log('exec ServerComp1')
-  await delay<unknown>(null)
+  await delay<unknown>(null, props.ms)
   const data = await genData('cacheKey1')
   // redirect('/')
   return (

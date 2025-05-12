@@ -1,7 +1,7 @@
 import { Suspense } from "react"
 
 function Loading (props: { name: string }) {
-  return (<div>Loading {props.name} Comp ...</div>)
+  return (<div className="p-4 border-4">Loading {props.name} Comp ...</div>)
 }
 
 
@@ -14,12 +14,14 @@ export default function ParallelLayout(
   return (
     <div className="Parallel-Layout m-2 p-2 border-4">
       {children}
-      <Suspense fallback={<Loading name="Team" />}>
-        {team}
-      </Suspense>
-      <Suspense fallback={<Loading name="Analytics" />}>
-        {analytics}
-      </Suspense>
+      <div className="flex gap-4">
+        <Suspense fallback={<Loading name="Team" />}>
+          {team}
+        </Suspense>
+        <Suspense fallback={<Loading name="Analytics" />}>
+          {analytics}
+        </Suspense>
+      </div>
     </div>
   )
 }

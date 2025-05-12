@@ -1,24 +1,29 @@
 import { useState, useEffect } from "react"
 
+type TestType = { name: string, count: number }
+
 export const useTest = () => {
-    const [state, setState] = useState<{ name: string, age: number, likes: { habit: string, id: number }[]}>();
+    const [state, setState] = useState<TestType>();
     console.log('render useTest', state?.name);
 
     useEffect(() => {
         if (state) return
         console.log('first exec useTest effect');
-        setState({ name: 'qoo', age: 123, likes: [{ habit: 'qq', id: 1 }] });
+        setState({ name: 'qoo',count: 1 });
 
         return () => {
             console.log('clean up', state)
         }
     }, [state])
 
-    useEffect(() => {
-        console.log('state.name changed', state?.name);
-    }, [state?.name]);
-
+    function addCount() {
+        setState((state) => {
+            const s = state as TestType
+            return { ...s, count: s.count + 1 }
+        })
+    }
     return {
-        state 
+        state,
+        addCount,
     }
 }
