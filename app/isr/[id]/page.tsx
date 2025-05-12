@@ -41,7 +41,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
           <Image src={`/img/ISR01.png`} alt={'img'}  width="400" height="200"></Image>
         </div>
         <div className="mb-2 p-2 border-4">
-          <div><b>(檢驗"ETag")已逾時的請求仍返回304，仍使用上次緩存的html，但服務器會在背景重新產生該html，response header有標記已過時</b></div>
+          <div><b>(檢驗&quot;ETag&quot;)已逾時的請求仍返回304，仍使用上次緩存的html，但服務器會在背景重新產生該html，response header有標記已過時</b></div>
           <Image src={`/img/ISR02.png`} alt={'img'}  width="400" height="200"></Image>
         </div>
         <div className="mb-2 p-2 border-4">
