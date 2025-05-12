@@ -37,7 +37,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
       <div>
         <div>CURL範例(revalidate=60)</div>
         <div className="mb-2 p-2 border-4">
-          <div><b>(檢驗"ETag")未逾時的請求返回304，故使用上次緩存的html</b></div>
+          <div><b>(檢驗&quot;ETag&quot;)未逾時的請求返回304，故使用上次緩存的html</b></div>
           <Image src={`/img/ISR01.png`} alt={'img'}  width="400" height="200"></Image>
         </div>
         <div className="mb-2 p-2 border-4">
@@ -45,7 +45,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
           <Image src={`/img/ISR02.png`} alt={'img'}  width="400" height="200"></Image>
         </div>
         <div className="mb-2 p-2 border-4">
-          <div><b>已重新產生html，故返回該html並更新"ETag"</b></div>
+          <div><b>已重新產生html，故返回該html並更新&quot;ETag&quot;</b></div>
           <Image src={`/img/ISR03.png`} alt={'img'}  width="400" height="100"></Image>
         </div>
       </div>
