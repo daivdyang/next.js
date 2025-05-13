@@ -27,6 +27,9 @@ export default async function Home() {
           <li className="mb-2">
             <Link href={'/route-streaming'}>Route Streaming</Link>
           </li>
+          <li className="mb-2">
+            <Link href={'/vibrate'}>Mobile Vibrate Test</Link>
+          </li>
           {/* <li className="mb-2">
             <Link href={'/products/A'}>Test StaticParams Page</Link>
           </li>
