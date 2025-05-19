@@ -28,7 +28,7 @@ const config: Config = {
         heading: colors.blue,
         gray: colors.gray,
       },
-      typography: ({ theme }) => ({
+      typography: ({ theme }: { theme: (arg: string) => void }) => ({
         DEFAULT: {
           css: {
             a: {
