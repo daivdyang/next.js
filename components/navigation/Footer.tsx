@@ -45,7 +45,7 @@ export default function Footer() {
             <div>{` • `}</div>
             <div>{`© ${new Date().getFullYear()}`}</div>
             <div>{` • `}</div>
-            <Link href="/">{'GGGGGG'}</Link>
+            <Link href="https://github.com/daivdyang/next.js">{'Github'}</Link>
           </div>
         </div>
       </footer>
