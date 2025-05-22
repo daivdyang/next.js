@@ -6,7 +6,7 @@ interface BlogItemProps {
 }
 
 const BlogItem: React.FC<BlogItemProps> = ({ info }) => {
-  const { title, description, date, icon, isMilestone, iconBgColor, iconColor } = info;
+  const { title, description, date, isMilestone } = info;
 
   // const defaultIconBgColor = isMilestone ? 'bg-amber-500' : 'bg-sky-500';
   // const defaultIconColor = 'text-white';
