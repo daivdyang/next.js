@@ -10,7 +10,7 @@ export function ClientComp1(props: React.PropsWithChildren<{ key?: string }>) {
     const router = useRouter();
     const { state, addCount } = useTest()
     const onClickGoto = () => {
-        router.push(`/`)
+        router.push(`/nextjs`)
     }
 
     useEffect(() => {
@@ -26,7 +26,7 @@ export function ClientComp1(props: React.PropsWithChildren<{ key?: string }>) {
                 <div>{ `Name:${state?.name}` }</div>
                 <div>{ `Count:${state?.count}` }</div>
                 <button className="rounded-xl p-2 bg-[#0000001d]" onClick={addCount}>Count+1</button>
-                <button className="rounded-xl p-2 bg-[#0000001d]" onClick={onClickGoto}>Home</button>
+                <button className="rounded-xl p-2 bg-[#0000001d]" onClick={onClickGoto}>Back</button>
             </div>
             { props.children }
         </div>

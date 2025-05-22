@@ -53,7 +53,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
         <div>{`Id: ${id}, revalidate:(${revalidate}s)`}</div>
         <div>(Server刷新時間)Timestamp: {Date.now()}</div>
       </div>
-      <div className="my-4"><Link className="m-2 rounded-xl p-2 bg-[#0000001d]" href={'/'}>Home</Link></div>
+      <div className="my-4"><Link className="m-2 rounded-xl p-2 bg-[#0000001d]" href={'/nextjs'}>Back</Link></div>
     </div>
   )
 }

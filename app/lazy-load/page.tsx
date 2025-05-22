@@ -14,7 +14,7 @@ export default function Page() {
     console.log('exec Blogs')
 
     const onClickGoto = () => {
-        router.push('/')
+        router.push('/nextjs')
     }
 
     
@@ -28,7 +28,7 @@ export default function Page() {
                 <Image className="border-4" src={`/img/test1.jpg`} alt={'img'}  width="100" height="100"></Image>
                 <button className="m-2 rounded-xl p-2 bg-[#0000001d]" onClick={() => setShow((state) => !state)}>Load ClientComp</button>
                 {show && <ClientComponent />}
-                <button className="m-2 rounded-xl p-2 bg-[#0000001d]" onClick={onClickGoto}>Home</button>
+                <button className="m-2 rounded-xl p-2 bg-[#0000001d]" onClick={onClickGoto}>Back</button>
             </div>
         </div>
     )

@@ -11,7 +11,7 @@ export default function Page() {
         <ClientComp key="c1" method='Get' />
         <ClientComp key="c2" method='Post' />
       </div>
-      <Link className="m-2 rounded-xl p-2 bg-[#0000001d]" href={'/'}>Home</Link>
+      <Link className="m-2 rounded-xl p-2 bg-[#0000001d]" href={'/nextjs'}>Back</Link>
     </div>
   )
 }
