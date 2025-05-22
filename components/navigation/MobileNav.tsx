@@ -71,11 +71,11 @@ const MobileNav = () => {
           {headerNavLinks.map((link) => (
             <div key={link.title} className="px-12 py-4">
               <Link
-                href={`/${link.href}`}
+                href={`${link.href}`}
                 className="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100"
                 onClick={onToggleNav}
               >
-                {`${link.title.toLowerCase()}`}
+                {`${link.title}`}
               </Link>
             </div>
           ))}
