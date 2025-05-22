@@ -20,8 +20,11 @@
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-h5-audio-player": "^3.10.0-rc.1",
-    "remark": "^15.0.1",
-    "remark-html": "^16.0.1"
+    "rehype-add-classes": "^1.0.0",
+    "rehype-stringify": "^10.0.1",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.2",
+    "unified": "^11.0.5"
   },
   "devDependencies": {
     "@cloudflare/next-on-pages": "^1.13.12",
