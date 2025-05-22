@@ -44,6 +44,12 @@ export default async function Page({ params } :{ params : Promise<{ date: string
   const htmlContent = processContent.toString()
 
   return (
-    <article className='prose lg:prose-xl' dangerouslySetInnerHTML={{ __html: htmlContent }}></article>
+    <div>
+      <div className='flex justify-between py-2'>
+        <div>{post.displayDate}</div>
+        <div className='text-[gray]'>{post.stats.text}</div>
+      </div>
+      <article className='prose lg:prose-xl' dangerouslySetInnerHTML={{ __html: htmlContent }}></article>
+    </div>
   )
 }

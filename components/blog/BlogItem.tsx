@@ -6,7 +6,7 @@ interface BlogItemProps {
 }
 
 const BlogItem: React.FC<BlogItemProps> = ({ info }) => {
-  const { title, description, date, isMilestone } = info;
+  const { title, description, date, isMilestone, readingTime } = info;
 
   // const defaultIconBgColor = isMilestone ? 'bg-amber-500' : 'bg-sky-500';
   // const defaultIconColor = 'text-white';
@@ -36,11 +36,9 @@ const BlogItem: React.FC<BlogItemProps> = ({ info }) => {
           <time className="mb-1 text-xs font-normal text-gray-500 sm:mb-0 dark:text-gray-400">
             {date}
           </time>
-          {isMilestone && (
-            <span className="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-amber-900 dark:text-amber-300 ms-3">
-              Milestone
-            </span>
-          )}
+          <span className="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-amber-900 dark:text-amber-300 ms-3">
+            {readingTime}
+          </span>
         </div>
         <h3 className={`text-lg font-semibold ${isMilestone ? 'text-amber-700 dark:text-amber-300' : 'text-gray-900 dark:text-white'}`}>
           {title}

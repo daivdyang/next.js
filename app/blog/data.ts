@@ -1,4 +1,5 @@
 import { cache } from 'react'
+import readingTime, { type ReadTimeResults } from 'reading-time'
 
 export const mdFileList = [
   { date: '2025-05-14-01.md' },
@@ -15,7 +16,13 @@ type MarkDownInfo = {
   /** create date */
   date: string
   content: string
+  stats: ReadTimeResults
+  displayDate: string
+  title: string
+  description: string
 }
+
+const Unknown = 'Unknown'
 
 // markdown file list cache
 export const mdCache = cache(async () => {
@@ -23,7 +30,19 @@ export const mdCache = cache(async () => {
   for(const { date } of mdFileList) {
     const url = getUrl(date)
     const mdContent = await await (await fetch(url, { next: { revalidate: 24 * 3600 } })).text()
-    list.push({ date, content: mdContent })
+    const stats = readingTime(mdContent)
+    const [displayDate] = /\d{4}-\d{2}-\d{2}/.exec(date) ?? []
+    const [,title] = /^# (.+)\n/.exec(mdContent) ?? []
+    const [,description] = /#.+\n\n(.+)/.exec(mdContent) ?? []
+
+    list.push({
+      date,
+      content: mdContent,
+      stats,
+      displayDate: displayDate ?? Unknown,
+      title: title ?? Unknown, 
+      description: !description ? Unknown : description.slice(0, 20) + '...' 
+    })
   }
 
   return list

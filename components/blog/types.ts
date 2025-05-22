@@ -3,6 +3,7 @@ import { ReactNode } from 'react';
 export interface BlogItemInfo {
   id: string;
   title: string;
+  readingTime: string;
   description: string;
   date: string;
   icon?: ReactNode; // Optional custom icon
