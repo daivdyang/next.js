@@ -8,13 +8,8 @@ import { redirect } from 'next/navigation'
 
 export async function generateStaticParams() {
   // github markdown file list
-  return Promise.resolve([
-    { date: '2024-11-08-01.md' },
-    { date: '2025-02-05-01.md' },
-    { date: '2025-04-14-01.md' },
-    { date: '2025-04-14-02.md' },
-    { date: '2025-05-14-01.md' },
-  ])
+  const list = await mdCache()
+  return Promise.resolve(list)
 }
 
 function replaceImageUrl(input: string) {
