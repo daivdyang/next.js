@@ -31,21 +31,21 @@ const Unknown = 'Unknown'
 // markdown file list cache
 export const mdCache = cache(async () => {
   const list: MarkDownInfo[] = []
-  for(const { date } of mdFileList) {
+  for (const { date } of mdFileList) {
     const url = getUrl(date)
-    const mdContent = await await (await fetch(url, { next: { revalidate: 24 * 3600 } })).text()
+    const mdContent = await (await fetch(url, { next: { revalidate: 24 * 3600 } })).text()
     const stats = readingTime(mdContent)
     const [displayDate] = /\d{4}-\d{2}-\d{2}/.exec(date) ?? []
-    const [,title] = /^# (.+)\n/.exec(mdContent) ?? []
-    const [,description] = /#.+\n\n(.+)/.exec(mdContent) ?? []
+    const [, title] = /^# (.+)\n/.exec(mdContent) ?? []
+    const [, description] = /#.+\n\n(.+)/.exec(mdContent) ?? []
 
     list.push({
       date,
       content: mdContent,
       stats,
       displayDate: displayDate ?? Unknown,
-      title: title ?? Unknown, 
-      description: !description ? Unknown : description.slice(0, 20) + '...' 
+      title: title ?? Unknown,
+      description: !description ? Unknown : description.slice(0, 20) + '...'
     })
   }
 
